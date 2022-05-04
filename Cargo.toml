@@ -1,0 +1,13 @@
+[package]
+name = "unaf-svr"
+description = "U.N.A.F.; [U]SAGI.[N]ETWORK [A]pplication [F]ramework :: [S]er[v]e[r] module"
+version = "0.0.0"
+edition = "2021"
+authors = ["USAGI.NETWORK / Usagi Ito <the@usagi.network>"]
+license = "MIT"
+repository = "https://github.com/usagi/unaf-svr"
+categories = ["web-programming::http-server"]
+keywords = ["unaf", "server", "app-framework", "usagi-network", "web"]
+documentation = "https://docs.rs/unaf-svr/"
+
+[dependencies]
