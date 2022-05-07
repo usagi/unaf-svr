@@ -29,8 +29,9 @@ impl<'de> PreprocessedPayload
  {
   match self.content_type.as_str()
   {
+   content_type::APPLICATION_MSGPACK => rmp_serde::from_slice(self.serialized_params.as_slice()).ok(),
+   content_type::APPLICATION_TOML => toml::from_slice(self.serialized_params.as_slice()).ok(),
    content_type::APPLICATION_JSON => serde_json::from_slice(self.serialized_params.as_slice()).ok(),
-   // mime::APPLICATION_MSGPACK =>,
    _ => None
   }
  }
@@ -41,8 +42,9 @@ impl<'de> PreprocessedPayload
  {
   match self.content_type.as_str()
   {
+   content_type::APPLICATION_MSGPACK => rmp_serde::to_vec(&dst).ok(),
+   content_type::APPLICATION_TOML => toml::to_vec(&dst).ok(),
    content_type::APPLICATION_JSON => serde_json::to_vec(&dst).ok(),
-   // mime::APPLICATION_MSGPACK =>,
    _ => None
   }
  }
